@@ -20,7 +20,7 @@ runs:
       # refs/heads/<branch_name>
       # refs/pull/<pr_number>/merge
       # refs/tags/<tag_name>
-      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.0
+      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.1
       id: cache-hit-ref
       with:
         key: ${{ inputs.key }}
@@ -32,7 +32,7 @@ runs:
       if: |
         ! (steps.cache-hit-ref.outputs.cache-hit == 'true') &&
         github.head_ref
-      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.0
+      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.1
       id: cache-hit-head-ref
       with:
         key: ${{ inputs.key }}
@@ -45,7 +45,7 @@ runs:
         ! (steps.cache-hit-ref.outputs.cache-hit == 'true') &&
         ! (steps.cache-hit-head-ref.outputs.cache-hit == 'true') &&
         github.event.pull_request.base.ref
-      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.0
+      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.1
       id: cache-hit-pr-base
       with:
         key: ${{ inputs.key }}
@@ -59,7 +59,7 @@ runs:
         ! (steps.cache-hit-head-ref.outputs.cache-hit == 'true') &&
         ! (steps.cache-hit-pr-base.outputs.cache-hit == 'true') &&
         ! (github.ref == format('refs/heads/{0}', github.event.repository.default_branch))
-      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.0
+      uses: pascallj/cache-key-check/.github/actions/api-cache-hit@v1.0.1
       id: cache-hit-default-branch
       with:
         key: ${{ inputs.key }}
