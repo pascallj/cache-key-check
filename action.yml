@@ -10,7 +10,7 @@ inputs:
     required: false
 outputs:
   cache-hit:
-    description: A boolean value to indicate a match was found for the key or prefix.
+    description: A string ('true' or 'false') to indicate a match was found for the key or prefix
     value: ${{ steps.cache-hit.outputs.cache-hit }}
 
 runs:
