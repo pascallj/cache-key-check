@@ -1,5 +1,7 @@
 # GitHub Actions Cache Key Check
 
+> :warning: After two days, this actions has already lost it's usefulness now that https://github.com/actions/cache/pull/1041 has been merged. You should now use the `lookup-only` option of [actions/cache](https://github.com/actions/cache) instead
+
 This GitHub Action determines if for a given key or prefix a cache restore would have caused a cache hit under the current conditions without restoring the cache contents itself.
 
 ## Goal
